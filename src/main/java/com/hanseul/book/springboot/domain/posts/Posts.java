@@ -1,6 +1,5 @@
 package com.hanseul.book.springboot.domain.posts;
 
-
 import com.hanseul.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
@@ -28,7 +27,7 @@ public class Posts extends BaseTimeEntity {
 
     private String author;
 
-    //해당 클래스의 빌더 패턴 클래스를 생성, 생성자 상단에 선언 시 생성자에 포함된 피륻만 빌더에 포함
+    //해당 클래스의 빌더 패턴 클래스를 생성, 생성자 상단에 선언 시 생성자에 포함된 필드만 빌더에 포함
     @Builder
     public Posts(String title, String content, String author){
         this.title = title;

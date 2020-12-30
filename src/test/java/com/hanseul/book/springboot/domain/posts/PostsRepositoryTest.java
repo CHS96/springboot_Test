@@ -19,7 +19,7 @@ public class PostsRepositoryTest {
     @Autowired
     PostsRepository postsRepository;
 
-    @After
+    @After //Junit에서 단위 테스트가 끝날 때마다 수행되는 메서드를 지정
     public void cleanup(){
         postsRepository.deleteAll();
     }
@@ -30,6 +30,8 @@ public class PostsRepositoryTest {
         String title = "테스트 게시글";
         String content = "테스트 본문";
 
+        //테이블 posts에 insert/update 쿼리를 실행
+        //id 값이 있다면 update, 없다면 insert 쿼리가 실행
         postsRepository.save(Posts.builder()
                 .title(title)
                 .content(content)
@@ -37,6 +39,7 @@ public class PostsRepositoryTest {
                 .build());
 
         //when
+        //테이블 posts에 있는 모든 데이터를 조회해오는 메서드
         List<Posts> postsList = postsRepository.findAll();
 
         //then
