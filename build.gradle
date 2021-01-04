@@ -22,12 +22,10 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-
     //스프링 부트 의존성
     compile('org.springframework.boot:spring-boot-starter-web')
 
@@ -43,13 +41,14 @@ dependencies {
     //무스타치 의존성
     compile('org.springframework.boot:spring-boot-starter-mustache')
 
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-
     //oauth 의존성
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
 
     //jdbc 의존성
     compile('org.springframework.session:spring-session-jdbc')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile("org.springframework.security:spring-security-test")
 }
 
 test {
