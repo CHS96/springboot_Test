@@ -35,15 +35,21 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
 
+    //jap 의존성
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
 
     compile('com.h2database:h2')
 
+    //무스타치 의존성
     compile('org.springframework.boot:spring-boot-starter-mustache')
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
+    //oauth 의존성
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+
+    //jdbc 의존성
+    compile('org.springframework.session:spring-session-jdbc')
 }
 
 test {
